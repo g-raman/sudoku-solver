@@ -1,0 +1,32 @@
+{% extends "body.html" %} {% block board %} {% for i in range(81) %}
+<input class="cell" type="text" maxlength="1" />
+{% endfor %} {% endblock %} {% block buttons %}
+<button class="button play-button" id="solve" title="Show solution">
+  <ion-icon name="checkmark-outline"></ion-icon>
+</button>
+<button class="button play-button" id="check" title="Check your answer">
+  <ion-icon name="help-outline"></ion-icon>
+</button>
+<div id="timer">00:00:00</div>
+<button class="button play-button" id="new" title="New game">
+  <ion-icon name="refresh-outline"></ion-icon>
+</button>
+<button class="button play-button" id="clear" title="Clear board">
+  <ion-icon name="trash-outline"></ion-icon>
+</button>
+{% endblock %} {% block rules %}
+<p>
+  The goal is to fully fill in the grid with numbers such that each row, column,
+  and 3x3 subgrid has the numbers 1 through 9 with no duplicates.
+  <br /><br />
+  Test your skills and see how long it takes you to solve this puzzle.
+</p>
+{% endblock %} {% block notes %}
+<h2>Notes</h2>
+<p>
+  You can only check your solution if you have filled in all cells.<br /><br />
+  When you check your solution the timer will stop if your solution is correct
+  or you'll be told you've misplaced some numbers.<br /><br />
+  All puzzles that are generated will have a unique solution.
+</p>
+{% endblock %}

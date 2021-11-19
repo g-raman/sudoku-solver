@@ -1,0 +1,46 @@
+{% extends "body.html" %} {% block board %} {% for i in range(81) %}
+<input class="cell" type="text" maxlength="1" />
+{% endfor %} {% endblock %} {% block buttons %}
+
+<button
+  class="button create-button"
+  id="solve"
+  type="button"
+  title="Show Solution"
+>
+  <span class="button-text">Solve</span>
+  <span class="button-icon">
+    <ion-icon name="checkmark-outline"></ion-icon>
+  </span>
+</button>
+
+<button
+  class="button create-button"
+  id="clear"
+  type="button"
+  title="Clear board"
+>
+  <span class="button-text">Clear</span>
+  <span class="button-icon">
+    <ion-icon name="trash-outline"></ion-icon>
+  </span>
+</button>
+{% endblock %} {% block rules %}
+<p>
+  The goal is to fully fill in the grid with numbers such that each row, column,
+  and 3x3 subgrid has the numbers 1 through 9 with no duplicates.
+  <br /><br />Here is an <span id="example">example</span> of a typical sudoku
+  board.
+</p>
+{% endblock %} {% block notes %}
+<h2>Notes & Instructions</h2>
+<p>
+  Enter numbers into the board and press solve to see the solution.<br /><br />
+  The solver will tell you if the board is invalid or unsolvable, otherwise,
+  you'll be shown the solution. Here's an example of an
+  <span id="invalid">invalid</span> board and an
+  <span id="unsolvable">unsolvable</span> board.<br />
+  <br />
+  There may also be multiple solutions to a board.
+</p>
+{% endblock %}

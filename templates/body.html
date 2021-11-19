@@ -1,0 +1,21 @@
+{% extends "navbar.html" %} {% block body %}
+<div class="grid-container">
+  <div class="grid-item board">
+    {% block instructions %}{% endblock %}{% block board %}{% endblock %}
+  </div>
+  <div class="grid-item rules">
+    <h2>Rules of the game</h2>
+    {% block rules %}{% endblock %}
+  </div>
+  <div class="grid-item notes">{% block notes %}{% endblock %}</div>
+  <div class="grid-item buttons">{% block buttons %}{% endblock %}</div>
+</div>
+<footer>
+  <p class="icon-credit">
+    These icons are made by
+    <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
+    <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    and <a href="https://ionic.io/ionicons" title="Ionicons">Ionicons</a>
+  </p>
+</footer>
+{% endblock %}

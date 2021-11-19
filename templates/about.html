@@ -1,0 +1,50 @@
+{% extends "navbar.html" %} {% block body %}
+<div class="about-section">
+  <div class="website-content">
+    <h1>What you'll find:</h1>
+    <p>
+      In this website you'll find a sudoku game and a sudoku solver.
+      <br /><br />
+      In the sudoku game, you can try to solve the puzzle by following sudoku
+      rules. You'll have the options to give up and see the solution, check your
+      answer after filling in the entire grid, do a new puzzle, or delete all
+      your inputted values to start fresh. After you, finish you can see how
+      long it took you to solve the puzzle.
+      <br /><br />
+      In the sudoku solver, you can enter the hints to a sudoku puzzle, and the
+      website will solve the puzzle. The sudoku solver will warn you if the
+      puzzle you entered is invalid, or unsolvable.
+    </p>
+  </div>
+  <div class="puzzle-generation">
+    <h1>How the puzzles are generated:</h1>
+    <p>
+      This website doesn't generate its own boards each time you want to play a
+      new game. Instead it goes through a database of puzzles and selects one
+      for you to play. This database contains one million sudoku boards and was
+      provided by: Kybyong Park. See this
+      <a href="https://www.kaggle.com/bryanpark/sudoku" target="_blank">
+        webpage</a
+      >
+      for more information.
+    </p>
+  </div>
+  <div class="solver-algorithm">
+    <h1>How the puzzles are solved:</h1>
+    <p>
+      The website uses a backtracking algorithm which tests all possible
+      solutions for each cell and then backtracks and tries another solution
+      when the board becomes unsolvable.
+    </p>
+  </div>
+  <div class="icons">
+    <h1>Icons:</h1>
+    <p>
+      These icons are made by
+      <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
+      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      and <a href="https://ionic.io/ionicons" title="Ionicons">Ionicons</a>
+    </p>
+  </div>
+</div>
+{% endblock %}
