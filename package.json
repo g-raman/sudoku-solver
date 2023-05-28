@@ -4,13 +4,18 @@
   "description": "Website about Sudoku",
   "main": "index.js",
   "scripts": {
-    "dev-server": "live-server .",
-    "sass-dev": "sass --watch --update --style=expanded assets/scss/main.scss:assets/css/style.css",
-    "sass-prod": "sass --no-source-map --style=compressed assets/scss/main.scss:assets/css/style.css",
-    "start": "npm-run-all dev-server sass-dev"
+    "watch:sass": "sass --watch --update --style=expanded assets/scss/main.scss:assets/css/style.css",
+    "compile:sass": "sass --no-source-map assets/scss/main.scss:assets/css/style.css",
+    "process:css": "postcss --no-source-map assets/css/style.css -o assets/css/style.css",
+    "build:css": "npm-run-all compile:sass process:css",
+    "start": "npm-run-all live-server watch:sass"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
     "sass": "^1.62.1"
   },
   "author": "Raman Gupta",
