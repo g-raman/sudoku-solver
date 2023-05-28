@@ -8,7 +8,8 @@
     "compile:sass": "sass --no-source-map assets/scss/main.scss:assets/css/style.css",
     "process:css": "postcss --no-source-map assets/css/style.css -o assets/css/style.css",
     "build:css": "npm-run-all compile:sass process:css",
-    "start": "npm-run-all live-server watch:sass"
+    "devserver": "live-server",
+    "start": "npm-run-all devserver watch:sass"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
