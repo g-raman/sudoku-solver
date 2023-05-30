@@ -1,0 +1,13 @@
+main {
+  display: grid;
+  grid-template-areas:
+    "nav"
+    "board"
+    "rules"
+    "notes";
+  justify-content: center;
+  align-content: space-between;
+
+  height: 100vh;
+}
+
