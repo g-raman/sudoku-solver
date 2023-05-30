@@ -9,7 +9,7 @@
     "process:css": "postcss --no-source-map assets/css/style.css -o assets/css/style.css",
     "build:css": "npm-run-all compile:sass process:css",
     "devserver": "live-server",
-    "start": "npm-run-all devserver watch:sass"
+    "start": "npm-run-all --parallel devserver watch:sass"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
