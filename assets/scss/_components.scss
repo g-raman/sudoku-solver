@@ -1,5 +1,19 @@
 .nav {
   grid-area: nav;
+  justify-self: stretch;
   padding: 4rem;
   background-color: lightgreen;
 }
+
+.puzzle,
+.rules, 
+.notes {
+  background-color: lightgreen;
+  width: calc(100% - 4rem);
+  border-radius: 1rem;
+}
+
+.puzzle {
+  aspect-ratio: 1 / 1;
+}
+
