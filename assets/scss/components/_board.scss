@@ -1,26 +1,3 @@
-.nav {
-  grid-area: nav;
-  justify-self: stretch;
-  padding: 2rem;
-  background-color: lightgreen;
-
-  display: flex;
-  align-items: end;
-
-  &__icon {
-    height: 2.5rem;
-    width: 2.5rem;
-  }
-}
-
-.board,
-.rules,
-.notes {
-  background-color: lightgreen;
-  width: calc(100% - 4rem);
-  border-radius: 1rem;
-}
-
 .board {
   aspect-ratio: 1 / 1;
   padding: 1rem;
