@@ -5,3 +5,12 @@
   width: calc(100% - 4rem);
   border-radius: 1rem;
 }
+
+.rules,
+.notes {
+  padding: 1.5rem;
+
+  & > *:not(:last-child) {
+    margin-bottom: 0.8em;
+  }
+}
