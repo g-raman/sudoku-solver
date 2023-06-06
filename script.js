@@ -69,6 +69,17 @@ function solve(board) {
   return false;
 }
 
+function updateBoard(board) {
+  const cells = document.querySelectorAll(".board__cell");
+
+  for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
+    const row = Math.floor(cellIndex / 9);
+    const col = cellIndex % 9;
+
+    cells[cellIndex].value = board[row][col];
+  }
+}
+
 function clearBoard() {
   const board = document.querySelectorAll(".board__cell");
 
