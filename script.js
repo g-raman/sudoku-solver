@@ -24,6 +24,30 @@ function findEmptySpace(board) {
   return null;
 }
 
+function isValidMove(row, col, num, board) {
+  // Check for duplicates along the column
+  for (let x = 0; x < 9; x++) {
+    if (board[x][col] === num) return false;
+  }
+
+  // Check for duplicate along the row
+  for (let y = 0; y < 9; y++) {
+    if (board[row][y] === num) return false;
+  }
+
+  // Check for duplicates in box
+  let boxStartX = Math.floor(row / 3) * 3;
+  let boxStartY = Math.floor(col / 3) * 3;
+
+  for (let x = 0; x < 3; x++) {
+    for (let y = 0; y < 3; y++) {
+      if (board[boxStartX + x][boxStartY + y] === num) return false;
+    }
+  }
+
+  return true;
+}
+
 function clearBoard() {
   const board = document.querySelectorAll(".board__cell");
 
