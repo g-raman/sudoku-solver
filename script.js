@@ -23,3 +23,11 @@ function findEmptySpace(board) {
 
   return null;
 }
+
+function clearBoard() {
+  const board = document.querySelectorAll(".board__cell");
+
+  for (let cellIndex = 0; cellIndex < board.length; cellIndex++) {
+    board[cellIndex].value = "";
+  }
+}
