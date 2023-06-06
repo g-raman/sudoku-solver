@@ -13,3 +13,13 @@ function boardToArray() {
 
   return arr;
 }
+
+function findEmptySpace(board) {
+  for (let row = 0; row < 9; row++) {
+    for (let col = 0; col < 9; col++) {
+      if (board[row][col] === "") return [row, col];
+    }
+  }
+
+  return null;
+}
