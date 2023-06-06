@@ -31,3 +31,36 @@ function clearBoard() {
     board[cellIndex].value = "";
   }
 }
+
+function isValidSudoku(board) {
+  let rows = new Set();
+  let cols = new Set();
+  let boxes = new Set();
+
+  for (let row = 0; row < 9; row++) {
+    for (let col = 0; col < 9; col++) {
+      let currNum = board[row][col];
+
+      if (currNum === "") continue;
+
+      let rowLocation = `${currNum} in row ${row}`;
+      let colLocation = `${currNum} in col ${col}`;
+      let boxLocation = `${currNum} in box ${Math.floor(row / 3)} ${Math.floor(
+        col / 3
+      )}`;
+
+      if (
+        rows.has(rowLocation) ||
+        cols.has(colLocation) ||
+        boxes.has(boxLocation)
+      ) {
+        return false;
+      }
+
+      rows.add(rowLocation);
+      cols.add(colLocation);
+      boxes.add(boxLocation);
+    }
+  }
+  return true;
+}
