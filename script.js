@@ -48,6 +48,27 @@ function isValidMove(row, col, num, board) {
   return true;
 }
 
+function solve(board) {
+  const emptyCell = findEmptySpace(board);
+
+  if (emptyCell === null) return true;
+
+  let row, col;
+  [row, col] = emptyCell;
+
+  for (let option = 1; option < 10; option++) {
+    const strOption = option.toString();
+    if (isValidMove(row, col, strOption, board)) {
+      board[row][col] = strOption;
+
+      if (solve(board)) return true;
+
+      board[row][col] = "";
+    }
+  }
+  return false;
+}
+
 function clearBoard() {
   const board = document.querySelectorAll(".board__cell");
 
