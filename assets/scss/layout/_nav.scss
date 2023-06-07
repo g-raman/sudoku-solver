@@ -2,13 +2,14 @@
   grid-area: nav;
   justify-self: stretch;
   padding: 2rem;
-  background-color: lightgreen;
+  background-color: var(--bg-color);
 
   display: flex;
   align-items: end;
 
   &__icon {
-    height: 2.5rem;
-    width: 2.5rem;
+    // height: 3rem;
+    // width: 3rem;
+    font-size: 3rem;
   }
 }

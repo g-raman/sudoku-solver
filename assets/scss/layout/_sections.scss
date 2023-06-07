@@ -1,10 +1,12 @@
+@use "../abstracts/" as a;
+
 .board,
 .btns,
 .rules,
 .notes {
-  background-color: lightgreen;
+  background-color: var(--bg-color);
   width: calc(100% - 4rem);
-  border-radius: 1rem;
+  border-radius: a.$border-radius-md;
 }
 
 .btns {
@@ -20,9 +22,17 @@
 
 .rules,
 .notes {
-  padding: 1.5rem;
-
-  & > *:not(:last-child) {
-    margin-bottom: 0.8em;
+  line-height: 1.2;
+  & > *:not(:first-child) {
+    margin: 1rem 1.5rem 0 1.5rem;
   }
+
+  & > *:last-child {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.h2--title {
+  padding: 1rem 1.5rem;
+  border-bottom: 2px solid #000;
 }

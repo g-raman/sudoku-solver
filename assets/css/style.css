@@ -1,3 +1,10 @@
+:root {
+  --bg-color: #aadeff;
+  --fs-reg: 1.3rem;
+  --fs-large: 1.5rem;
+  --fs-xl: 2rem;
+}
+
 *,
 *::before,
 *::after {
@@ -12,7 +19,28 @@
 
 html {
   box-sizing: border-box;
+}
+
+* {
+  font-family: inherit;
+}
+
+html {
+  line-height: 1;
   font-family: "Josefin Sans", sans-serif;
+}
+
+h1 {
+  font-size: var(--fs-xl);
+}
+
+h2 {
+  font-size: var(--fs-large);
+}
+
+p,
+input {
+  font-size: var(--fs-reg);
 }
 
 .board {
@@ -28,40 +56,47 @@ html {
 }
 .board__cell {
   border-radius: 0;
-  border: 1px solid #ccc;
+  border: 1px solid #aaa;
+  background-color: #fdfdfd;
+  color: black;
   outline: none;
   height: 100%;
   width: 100%;
   text-align: center;
   font-size: 1.5rem;
-  appearance: none;
+  font-weight: 400;
 }
 .board > input:nth-child(3n) {
-  border-right: 2px solid #000;
+  border-right: 3px solid #000;
 }
 .board > input:nth-child(1) {
-  border-top-left-radius: 1rem;
+  border-top-left-radius: 0.5rem;
 }
 .board > input:nth-child(9) {
-  border-top-right-radius: 1rem;
+  border-top-right-radius: 0.5rem;
 }
 .board > input:nth-child(73) {
-  border-bottom-left-radius: 1rem;
+  border-bottom-left-radius: 0.5rem;
 }
 .board > input:nth-child(81) {
-  border-bottom-right-radius: 1rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
 .bb {
-  border-bottom: 2px solid #000;
+  border-bottom: 3px solid #000;
 }
 
 .bt {
-  border-top: 2px solid #000;
+  border-top: 3px solid #000;
 }
 
 .bl {
-  border-left: 2px solid #000;
+  border-left: 3px solid #000;
+}
+
+.hint {
+  background-color: #ddd;
+  opacity: 1;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -78,7 +113,7 @@ input[type=number] {
 .btn {
   padding: 0.5rem;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: 0.3rem;
   background-color: #fdfbfb;
   color: #000;
   transition: transform 0.2s;
@@ -99,13 +134,12 @@ input[type=number] {
   grid-area: nav;
   justify-self: stretch;
   padding: 2rem;
-  background-color: lightgreen;
+  background-color: var(--bg-color);
   display: flex;
   align-items: end;
 }
 .nav__icon {
-  height: 2.5rem;
-  width: 2.5rem;
+  font-size: 3rem;
 }
 
 main {
@@ -122,9 +156,9 @@ main {
 .btns,
 .rules,
 .notes {
-  background-color: lightgreen;
+  background-color: var(--bg-color);
   width: calc(100% - 4rem);
-  border-radius: 1rem;
+  border-radius: 0.7rem;
 }
 
 .btns {
@@ -139,11 +173,20 @@ main {
 
 .rules,
 .notes {
-  padding: 1.5rem;
+  line-height: 1.2;
 }
-.rules > *:not(:last-child),
-.notes > *:not(:last-child) {
-  margin-bottom: 0.8em;
+.rules > *:not(:first-child),
+.notes > *:not(:first-child) {
+  margin: 1rem 1.5rem 0 1.5rem;
+}
+.rules > *:last-child,
+.notes > *:last-child {
+  margin-bottom: 1.5rem;
+}
+
+.h2--title {
+  padding: 1rem 1.5rem;
+  border-bottom: 2px solid #000;
 }
 
 /*# sourceMappingURL=style.css.map */

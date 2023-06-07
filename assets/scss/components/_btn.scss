@@ -1,7 +1,9 @@
+@use "../abstracts/" as a;
+
 .btn {
   padding: 0.5rem;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: a.$border-radius-xsm;
   background-color: #fdfbfb;
   color: #000;
   transition: transform 0.2s;

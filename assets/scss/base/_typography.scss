@@ -1,0 +1,21 @@
+* {
+  font-family: inherit;
+}
+
+html {
+  line-height: 1;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+h1 {
+  font-size: var(--fs-xl);
+}
+
+h2 {
+  font-size: var(--fs-large);
+}
+
+p,
+input {
+  font-size: var(--fs-reg);
+}

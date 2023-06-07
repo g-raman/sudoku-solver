@@ -1,3 +1,5 @@
+@use "../abstracts/" as a;
+
 .board {
   aspect-ratio: 1 / 1;
   padding: 1rem;
@@ -13,46 +15,54 @@
 
   &__cell {
     border-radius: 0;
-    border: 1px solid #ccc;
+    border: 1px solid #aaa;
+    background-color: #fdfdfd;
+    color: black;
+
     outline: none;
     height: 100%;
     width: 100%;
     text-align: center;
     font-size: 1.5rem;
-    appearance: none;
+    font-weight: 400;
   }
 
   & > input:nth-child(3n) {
-    border-right: 2px solid #000;
+    border-right: 3px solid #000;
   }
 
   & > input:nth-child(1) {
-    border-top-left-radius: 1rem;
+    border-top-left-radius: a.$border-radius-sm;
   }
 
   & > input:nth-child(9) {
-    border-top-right-radius: 1rem;
+    border-top-right-radius: a.$border-radius-sm;
   }
 
   & > input:nth-child(73) {
-    border-bottom-left-radius: 1rem;
+    border-bottom-left-radius: a.$border-radius-sm;
   }
 
   & > input:nth-child(81) {
-    border-bottom-right-radius: 1rem;
+    border-bottom-right-radius: a.$border-radius-sm;
   }
 }
 
 .bb {
-  border-bottom: 2px solid #000;
+  border-bottom: 3px solid #000;
 }
 
 .bt {
-  border-top: 2px solid #000;
+  border-top: 3px solid #000;
 }
 
 .bl {
-  border-left: 2px solid #000;
+  border-left: 3px solid #000;
+}
+
+.hint {
+  background-color: #ddd;
+  opacity: 1;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
