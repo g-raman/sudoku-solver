@@ -1,9 +1,21 @@
 .board,
+.btns,
 .rules,
 .notes {
   background-color: lightgreen;
   width: calc(100% - 4rem);
   border-radius: 1rem;
+}
+
+.btns {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  & > * {
+    flex: 1;
+  }
 }
 
 .rules,

@@ -115,15 +115,51 @@
       <input min="1" max="9" type="number" class="board__cell bb" />
     </section>
 
+    <section class="btns">
+      <button class="btn btn--solve">
+        <svg class="btn__logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+          <path fill="currentColor"
+            d="M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41L9 16.17z" />
+        </svg>
+        <p class="btn__text">Solve</p>
+      </button>
+
+      <button class="btn btn--check">
+        <svg class="btn__logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+          <path fill="currentColor"
+            d="M12 4a5 5 0 0 0-5 5a1 1 0 0 0 2 0c0-1.658 1.342-3 3-3s3 1.342 3 3c0 .816-.199 1.294-.438 1.629c-.262.365-.625.638-1.128.985l-.116.078c-.447.306-1.023.699-1.469 1.247c-.527.648-.849 1.467-.849 2.561v.5a1 1 0 1 0 2 0v-.5c0-.656.178-1.024.4-1.299c.257-.314.603-.552 1.114-.903l.053-.037c.496-.34 1.133-.786 1.62-1.468C16.7 11.081 17 10.183 17 9a5 5 0 0 0-5-5Zm0 17.25a1.25 1.25 0 1 0 0-2.5a1.25 1.25 0 0 0 0 2.5Z" />
+        </svg>
+        <p class="btn__text">Check</p>
+      </button>
+
+      <button class="btn btn--new">
+        <svg class="btn__logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <path d="M19.933 13.041a8 8 0 1 1-9.925-8.788c3.899-1 7.935 1.007 9.425 4.747" />
+            <path d="M20 4v5h-5" />
+          </g>
+        </svg>
+        <p class="btn__text">New</p>
+      </button>
+
+      <button class="btn btn--clear">
+        <svg class="btn__logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 7h16m-10 4v6m4-6v6M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3" />
+        </svg>
+        <p class="btn__text">Clear</p>
+      </button>
+    </section>
+
     <section class="rules">
       <h2>Rules</h2>
       <p class="paragraph">
-        The goal of the game is to fill in the board such that each row,
+        the goal of the game is to fill in the board such that each row,
         column, and 3x3 sub-grid has the numbers 1-9 with no duplicates.
       </p>
 
       <p class="paragraph">
-        Test your skills and see how fast you can solve this puzzle
+        test your skills and see how fast you can solve this puzzle
       </p>
     </section>
 
@@ -131,12 +167,12 @@
       <h2>Notes</h2>
 
       <p class="paragraph">
-        You can only check your solution after all cells have been filled.
+        you can only check your solution after all cells have been filled.
       </p>
 
       <p class="paragraph">
-        When you check your work, if your solution is correct, the timer will
-        stop. Otherwise, you'll be told if you have mistakes.
+        when you check your work, if your solution is correct, the timer will
+        stop. otherwise, you'll be told if you have mistakes.
       </p>
 
       <p class="paragraph">All puzzles have a unique solution.</p>
