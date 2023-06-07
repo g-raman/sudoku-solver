@@ -1,19 +1,6 @@
 "use strict";
 
-function boardToArray() {
-  const board = document.querySelectorAll(".board__cell");
-  let arr = [[], [], [], [], [], [], [], [], []];
-
-  for (let cellIndex = 0; cellIndex < board.length; cellIndex++) {
-    const row = Math.floor(cellIndex / 9);
-    const col = cellIndex % 9;
-
-    arr[row][col] = board[cellIndex].value;
-  }
-
-  return arr;
-}
-
+// Sudoku solving algorithm
 function findEmptySpace(board) {
   for (let row = 0; row < 9; row++) {
     for (let col = 0; col < 9; col++) {
@@ -69,6 +56,15 @@ function solve(board) {
   return false;
 }
 
+// Visuals
+function clearBoard() {
+  const cells = document.querySelectorAll(".board__cell");
+
+  for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
+    cells[cellIndex].value = "";
+  }
+}
+
 function updateBoard(board) {
   const cells = document.querySelectorAll(".board__cell");
 
@@ -80,12 +76,19 @@ function updateBoard(board) {
   }
 }
 
-function clearBoard() {
-  const board = document.querySelectorAll(".board__cell");
+// Util
+function boardToArray() {
+  const cells = document.querySelectorAll(".board__cell");
+  let arr = [[], [], [], [], [], [], [], [], []];
 
-  for (let cellIndex = 0; cellIndex < board.length; cellIndex++) {
-    board[cellIndex].value = "";
+  for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
+    const row = Math.floor(cellIndex / 9);
+    const col = cellIndex % 9;
+
+    arr[row][col] = cells[cellIndex].value;
   }
+
+  return arr;
 }
 
 function isValidSudoku(board) {
@@ -121,6 +124,25 @@ function isValidSudoku(board) {
   return true;
 }
 
+function showValidInputOnly() {
+  const cells = document.querySelectorAll(".board__cell");
+
+  for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
+    cells[cellIndex].addEventListener("keydown", function(event) {
+      const keyPressed = parseInt(event.key);
+      event.preventDefault();
+
+      if (event.key === "Backspace" || event.key === "Delete") {
+        cells[cellIndex].classList.remove("hint");
+        cells[cellIndex].value = "";
+      } else if (!isNaN(keyPressed) && keyPressed >= 1 && keyPressed <= 9) {
+        cells[cellIndex].value = keyPressed;
+      }
+    });
+  }
+}
+
+// Fetch data
 const getBoards = fetch(
   "https://g-raman.github.io/sudoku-solver/sudoku.json"
 ).then((response) => response.json());
@@ -145,24 +167,8 @@ const showNewSudoku = async () => {
   }
 };
 
-showNewSudoku();
-
-function showValidInputOnly() {
-  const cells = document.querySelectorAll(".board__cell");
-
-  for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
-    cells[cellIndex].addEventListener("keydown", function(event) {
-      const keyPressed = parseInt(event.key);
-      event.preventDefault();
-
-      if (event.key === "Backspace" || event.key === "Delete") {
-        cells[cellIndex].classList.remove("hint");
-        cells[cellIndex].value = "";
-      } else if (!isNaN(keyPressed) && keyPressed >= 1 && keyPressed <= 9) {
-        cells[cellIndex].value = keyPressed;
-      }
-    });
-  }
-}
-
-showValidInputOnly();
+// Main
+document.addEventListener("DOMContentLoaded", function() {
+  showNewSudoku();
+  showValidInputOnly();
+});
