@@ -120,3 +120,29 @@ function isValidSudoku(board) {
   }
   return true;
 }
+
+const getBoards = fetch(
+  "https://g-raman.github.io/sudoku-solver/sudoku.json"
+).then((response) => response.json());
+
+const showNewSudoku = async () => {
+  const boards = await getBoards;
+  const randomBoard = Math.floor(Math.random() * 2000);
+
+  clearBoard();
+
+  const cells = document.querySelectorAll(".board__cell");
+  for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
+    const row = Math.floor(cellIndex / 9);
+    const col = cellIndex % 9;
+
+    if (boards[randomBoard][row][col] !== "") {
+      cells[cellIndex].classList.add("hint");
+      cells[cellIndex].disabled = true;
+    }
+
+    cells[cellIndex].value = boards[randomBoard][row][col];
+  }
+};
+
+showNewSudoku();
