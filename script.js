@@ -61,7 +61,18 @@ function clearBoard() {
   const cells = document.querySelectorAll(".board__cell");
 
   for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
+    if (cells[cellIndex].disabled) continue;
     cells[cellIndex].value = "";
+  }
+}
+
+function resetBoard() {
+  const cells = document.querySelectorAll(".board__cell");
+
+  for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
+    cells[cellIndex].value = "";
+    cells[cellIndex].disabled = false;
+    cells[cellIndex].classList.remove("hint");
   }
 }
 
@@ -151,7 +162,7 @@ const showNewSudoku = async () => {
   const boards = await getBoards;
   const randomBoard = Math.floor(Math.random() * 2000);
 
-  clearBoard();
+  resetBoard();
 
   const cells = document.querySelectorAll(".board__cell");
   for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
@@ -167,8 +178,35 @@ const showNewSudoku = async () => {
   }
 };
 
-// Main
+// Selectors
+const solveBtn = document.querySelector(".btn--solve");
+const checkBtn = document.querySelector(".btn--check");
+const newBtn = document.querySelector(".btn--new");
+const clearBtn = document.querySelector(".btn--clear");
+
 document.addEventListener("DOMContentLoaded", function() {
   showNewSudoku();
   showValidInputOnly();
+
+  solveBtn.addEventListener("click", function() {
+    clearBoard();
+    const board = boardToArray();
+    solve(board);
+    updateBoard(board);
+  });
+
+  checkBtn.addEventListener("click", function() {
+    const board = boardToArray();
+    const emptySpace = findEmptySpace(board);
+
+    if (emptySpace !== null) {
+      alert("Fill in the board first!");
+    } else if (isValidSudoku(board)) {
+      alert("Congratulations! You finished the puzzle!");
+    } else alert("You have some errors. Keep trying!");
+  });
+
+  newBtn.addEventListener("click", showNewSudoku);
+
+  clearBtn.addEventListener("click", clearBoard);
 });
