@@ -21,4 +21,19 @@
   &__text {
     font-size: 1rem;
   }
+
+  &--solve,
+  &--check,
+  &--new,
+  &--clear {
+    flex: 1;
+  }
+
+  &--timer {
+    width: 100%;
+    height: 4rem;
+    order: -1;
+
+    font-size: 2rem;
+  }
 }

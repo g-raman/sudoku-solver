@@ -87,6 +87,53 @@ function updateBoard(board) {
   }
 }
 
+// Timer
+let secs, mins, hours;
+secs = mins = hours = 0;
+let displaySecs, displayMins, displayHours, timerInterval;
+const timerElem = document.querySelector(".btn--timer");
+
+function timer() {
+  secs++;
+  if (secs / 60 === 1) {
+    secs = 0;
+    mins++;
+
+    if (mins / 60 === 1) {
+      mins = 0;
+      hours++;
+    }
+  }
+
+  displaySecs = secs < 10 ? `0${secs}` : secs;
+  displayMins = mins < 10 ? `0${mins}` : mins;
+  displayHours = hours < 10 ? `0${hours}` : hours;
+
+  let time = `${displayHours}:${displayMins}:${displaySecs}`;
+
+  timerElem.innerHTML = time;
+}
+
+timerElem.addEventListener("click", () => {
+  showNewSudoku();
+  startTimer();
+  timerElem.disabled = true;
+});
+
+function startTimer() {
+  timerInterval = setInterval(timer, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  secs = mins = hours = 0;
+  timerElem.innerHTML = "00:00:00"; 
+}
+
 // Util
 function boardToArray() {
   const cells = document.querySelectorAll(".board__cell");
@@ -163,6 +210,7 @@ const showNewSudoku = async () => {
   const randomBoard = Math.floor(Math.random() * 2000);
 
   resetBoard();
+  resetTimer();
 
   const cells = document.querySelectorAll(".board__cell");
   for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
@@ -176,6 +224,8 @@ const showNewSudoku = async () => {
 
     cells[cellIndex].value = boards[randomBoard][row][col];
   }
+
+  startTimer();
 };
 
 // Selectors
@@ -185,7 +235,7 @@ const newBtn = document.querySelector(".btn--new");
 const clearBtn = document.querySelector(".btn--clear");
 
 document.addEventListener("DOMContentLoaded", function() {
-  showNewSudoku();
+  resetBoard();
   showValidInputOnly();
 
   solveBtn.addEventListener("click", function() {
@@ -193,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const board = boardToArray();
     solve(board);
     updateBoard(board);
+    resetTimer();
   });
 
   checkBtn.addEventListener("click", function() {
@@ -203,6 +254,7 @@ document.addEventListener("DOMContentLoaded", function() {
       alert("Fill in the board first!");
     } else if (isValidSudoku(board)) {
       alert("Congratulations! You finished the puzzle!");
+      stopTimer();
     } else alert("You have some errors. Keep trying!");
   });
 
