@@ -1,5 +1,11 @@
 "use strict";
 
+// Nav
+const navToggle = document.querySelector(".nav__toggle");
+navToggle.addEventListener("click", () => {
+  document.querySelector(".nav__links").classList.toggle("active");
+})
+
 // Visuals
 function clearBoard() {
   const cells = document.querySelectorAll(".board__cell");
