@@ -23,16 +23,10 @@
 .rules,
 .notes {
   line-height: 1.2;
-  & > *:not(:first-child) {
-    margin: 1rem 1.5rem 0 1.5rem;
-  }
+  padding: 1.5rem;
 
-  & > *:last-child {
-    margin-bottom: 1.5rem;
+  & > *:not(:last-child) {
+    margin-bottom: 1rem;
   }
 }
 
-.h2--title {
-  padding: 1rem 1.5rem;
-  border-bottom: 2px solid #000;
-}
