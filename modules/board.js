@@ -5,7 +5,7 @@ function clearBoard() {
   const cells = document.querySelectorAll(".board__cell");
 
   for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
-    if (cells[cellIndex].disabled) continue;
+    if (cells[cellIndex].classList.contains("hint")) continue;
     cells[cellIndex].value = "";
   }
 }
@@ -79,23 +79,6 @@ function isValidSudoku(board) {
   return true;
 }
 
-function showValidInputOnly() {
-  const cells = document.querySelectorAll(".board__cell");
-
-  for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
-    cells[cellIndex].addEventListener("keydown", function(event) {
-      const keyPressed = parseInt(event.key);
-      event.preventDefault();
-
-      if (event.key === "Backspace" || event.key === "Delete") {
-        cells[cellIndex].classList.remove("hint");
-        cells[cellIndex].value = "";
-      } else if (!isNaN(keyPressed) && keyPressed >= 1 && keyPressed <= 9) {
-        cells[cellIndex].value = keyPressed;
-      }
-    });
-  }
-}
 
 // Fetch data
 const getBoards = fetch(
