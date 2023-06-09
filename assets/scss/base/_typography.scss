@@ -7,23 +7,25 @@ html {
   font-family: "Josefin Sans", sans-serif;
 }
 
+h1,
+h2,
+p,
+input,
+a,
+a:visited {
+  color: var(--color-text);
+}
+
 h1 {
   font-size: var(--fs-xl);
-  color: var(--color-text);
 }
 
 h2 {
   font-size: var(--fs-large);
-  color: var(--color-text);
 }
 
 p,
 input {
   font-size: var(--fs-reg);
-  color: var(--color-text);
 }
 
-a,
-a:visited {
-  color: var(--color-text);
-}

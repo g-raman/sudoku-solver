@@ -19,7 +19,7 @@
   }
 
   &__text {
-    font-size: 1rem;
+    font-size: var(--fs-reg);
   }
 
   &--solve,
@@ -34,6 +34,6 @@
     height: 4rem;
     order: -1;
 
-    font-size: 2rem;
+    font-size: var(--fs-xl);
   }
 }

@@ -1,19 +1,3 @@
-:root {
-  --bg-color: #aadeff;
-  --bg-color-dark: #8acbf4;
-  --color-grey-light: #fdfdfd;
-  --color-text: #000;
-  --fs-reg: 1.3rem;
-  --fs-large: 1.5rem;
-  --fs-xl: 2rem;
-  --b-rad-xsm: 0.3rem;
-  --b-rad-sm: 0.5rem;
-  --b-rad-med: 0.7rem;
-  --border-black-thick: 3px solid #000;
-  --gap-small: 1rem;
-  --gap-medium: 2rem;
-}
-
 *,
 *::before,
 *::after {
@@ -48,25 +32,63 @@ html {
   font-family: "Josefin Sans", sans-serif;
 }
 
+h1,
+h2,
+p,
+input,
+a,
+a:visited {
+  color: var(--color-text);
+}
+
 h1 {
   font-size: var(--fs-xl);
-  color: var(--color-text);
 }
 
 h2 {
   font-size: var(--fs-large);
-  color: var(--color-text);
 }
 
 p,
 input {
   font-size: var(--fs-reg);
-  color: var(--color-text);
 }
 
-a,
-a:visited {
-  color: var(--color-text);
+:root {
+  --bg-color: #aadeff;
+  --bg-color-dark: #8acbf4;
+  --color-grey-light: #fdfdfd;
+  --color-text: #000;
+  --fs-reg: 1rem;
+  --fs-large: 1.3rem;
+  --fs-xl: 1.5rem;
+  --b-rad-xsm: 0.3rem;
+  --b-rad-sm: 0.5rem;
+  --b-rad-med: 0.7rem;
+  --border-black-thick: 3px solid #000;
+  --gap-small: 1rem;
+  --gap-medium: 2rem;
+}
+@media (min-width: 25em) {
+  :root {
+    --fs-reg: 1.3rem;
+    --fs-large: 1.6rem;
+    --fs-xl: 1.9rem;
+  }
+}
+@media (min-width: 37.5em) {
+  :root {
+    --fs-reg: 1.3rem;
+    --fs-large: 1.8rem;
+    --fs-xl: 2rem;
+  }
+}
+@media (min-width: 56.25em) {
+  :root {
+    --fs-reg: 1.8rem;
+    --fs-large: 2.2rem;
+    --fs-xl: 2.5rem;
+  }
 }
 
 .board {
@@ -89,7 +111,7 @@ a:visited {
   height: 100%;
   width: 100%;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: var(--font-reg);
   font-weight: 400;
 }
 .board > input:nth-child(3n) {
@@ -153,7 +175,7 @@ input[type=number] {
   fill: currentColor;
 }
 .btn__text {
-  font-size: 1rem;
+  font-size: var(--fs-reg);
 }
 .btn--solve, .btn--check, .btn--new, .btn--clear {
   flex: 1;
@@ -162,7 +184,7 @@ input[type=number] {
   width: 100%;
   height: 4rem;
   order: -1;
-  font-size: 2rem;
+  font-size: var(--fs-xl);
 }
 
 .nav {
