@@ -3,9 +3,9 @@
 .btn {
   padding: 0.5rem;
   border: none;
-  border-radius: a.$border-radius-xsm;
-  background-color: #fdfbfb;
-  color: #000;
+  border-radius: var(--b-rad-xsm);
+  background-color: var(--color-grey-light);
+  color: var(--color-text);
   transition: transform 0.2s;
 
   &:active {

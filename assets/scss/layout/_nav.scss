@@ -3,6 +3,7 @@
 .nav {
   grid-area: nav;
   justify-self: stretch;
+
   padding: 1rem 2rem;
   background-color: var(--bg-color);
 
@@ -29,7 +30,7 @@
 
     li {
       padding: 1rem;
-      border-radius: 0.3rem;
+      border-radius: var(--b-rad-xsm);
       font-size: var(--fs-reg);
       flex-grow: 1;
       width: 100%;
@@ -37,7 +38,7 @@
     }
 
     li:hover {
-      background-color: #8acbf4;
+      background-color: var(--bg-color-dark);
     }
 
     @include breakpoint-down(medium) {

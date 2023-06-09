@@ -7,7 +7,7 @@
 .about__card {
   background-color: var(--bg-color);
   width: calc(100% - 4rem);
-  border-radius: a.$border-radius-md;
+  border-radius: var(--b-rad-med);
 }
 
 .btns {
@@ -15,7 +15,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--gap-small);
 }
 
 .rules,
@@ -33,7 +33,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: var(--gap-medium);
 
   &__link,
   &__link:visited {
@@ -41,4 +41,20 @@
     text-decoration: underline;
     color: blue;
   }
+}
+
+.board {
+  grid-area: board;
+}
+
+.btns {
+  grid-area: buttons;
+}
+
+.rules {
+  grid-area: rules;
+}
+
+.notes {
+  grid-area: notes;
 }

@@ -16,8 +16,8 @@
   &__cell {
     border-radius: 0;
     border: 1px solid #aaa;
-    background-color: #fdfdfd;
-    color: black;
+    background-color: var(--color-grey-light);
+    color: var(--color-text);
 
     outline: none;
     height: 100%;
@@ -28,36 +28,36 @@
   }
 
   & > input:nth-child(3n) {
-    border-right: 3px solid #000;
+    border-right: var(--border-black-thick);
   }
 
   & > input:nth-child(1) {
-    border-top-left-radius: a.$border-radius-sm;
+    border-top-left-radius: var(--b-rad-sm);
   }
 
   & > input:nth-child(9) {
-    border-top-right-radius: a.$border-radius-sm;
+    border-top-right-radius: var(--b-rad-sm);
   }
 
   & > input:nth-child(73) {
-    border-bottom-left-radius: a.$border-radius-sm;
+    border-bottom-left-radius: var(--b-rad-sm);
   }
 
   & > input:nth-child(81) {
-    border-bottom-right-radius: a.$border-radius-sm;
+    border-bottom-right-radius: var(--b-rad-sm);
   }
 }
 
 .bb {
-  border-bottom: 3px solid #000;
+  border-bottom: var(--border-black-thick);
 }
 
 .bt {
-  border-top: 3px solid #000;
+  border-top: var(--border-black-thick);
 }
 
 .bl {
-  border-left: 3px solid #000;
+  border-left: var(--border-black-thick);
 }
 
 .hint {

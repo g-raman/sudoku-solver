@@ -1,8 +1,17 @@
 :root {
   --bg-color: #aadeff;
+  --bg-color-dark: #8acbf4;
+  --color-grey-light: #fdfdfd;
+  --color-text: #000;
   --fs-reg: 1.3rem;
   --fs-large: 1.5rem;
   --fs-xl: 2rem;
+  --b-rad-xsm: 0.3rem;
+  --b-rad-sm: 0.5rem;
+  --b-rad-med: 0.7rem;
+  --border-black-thick: 3px solid #000;
+  --gap-small: 1rem;
+  --gap-medium: 2rem;
 }
 
 *,
@@ -28,8 +37,6 @@ li {
 a,
 a:visited {
   text-decoration: none;
-  display: block;
-  color: #000;
 }
 
 * {
@@ -43,15 +50,23 @@ html {
 
 h1 {
   font-size: var(--fs-xl);
+  color: var(--color-text);
 }
 
 h2 {
   font-size: var(--fs-large);
+  color: var(--color-text);
 }
 
 p,
 input {
   font-size: var(--fs-reg);
+  color: var(--color-text);
+}
+
+a,
+a:visited {
+  color: var(--color-text);
 }
 
 .board {
@@ -68,8 +83,8 @@ input {
 .board__cell {
   border-radius: 0;
   border: 1px solid #aaa;
-  background-color: #fdfdfd;
-  color: black;
+  background-color: var(--color-grey-light);
+  color: var(--color-text);
   outline: none;
   height: 100%;
   width: 100%;
@@ -78,31 +93,31 @@ input {
   font-weight: 400;
 }
 .board > input:nth-child(3n) {
-  border-right: 3px solid #000;
+  border-right: var(--border-black-thick);
 }
 .board > input:nth-child(1) {
-  border-top-left-radius: 0.5rem;
+  border-top-left-radius: var(--b-rad-sm);
 }
 .board > input:nth-child(9) {
-  border-top-right-radius: 0.5rem;
+  border-top-right-radius: var(--b-rad-sm);
 }
 .board > input:nth-child(73) {
-  border-bottom-left-radius: 0.5rem;
+  border-bottom-left-radius: var(--b-rad-sm);
 }
 .board > input:nth-child(81) {
-  border-bottom-right-radius: 0.5rem;
+  border-bottom-right-radius: var(--b-rad-sm);
 }
 
 .bb {
-  border-bottom: 3px solid #000;
+  border-bottom: var(--border-black-thick);
 }
 
 .bt {
-  border-top: 3px solid #000;
+  border-top: var(--border-black-thick);
 }
 
 .bl {
-  border-left: 3px solid #000;
+  border-left: var(--border-black-thick);
 }
 
 .hint {
@@ -124,9 +139,9 @@ input[type=number] {
 .btn {
   padding: 0.5rem;
   border: none;
-  border-radius: 0.3rem;
-  background-color: #fdfbfb;
-  color: #000;
+  border-radius: var(--b-rad-xsm);
+  background-color: var(--color-grey-light);
+  color: var(--color-text);
   transition: transform 0.2s;
 }
 .btn:active {
@@ -176,14 +191,14 @@ input[type=number] {
 }
 .nav__links li {
   padding: 1rem;
-  border-radius: 0.3rem;
+  border-radius: var(--b-rad-xsm);
   font-size: var(--fs-reg);
   flex-grow: 1;
   width: 100%;
   text-align: center;
 }
 .nav__links li:hover {
-  background-color: #8acbf4;
+  background-color: var(--bg-color-dark);
 }
 @media (max-width: 37.49875em) {
   .nav__links {
@@ -233,7 +248,7 @@ main {
   grid-template-rows: repeat(5, min-content);
   justify-items: center;
   align-content: start;
-  grid-gap: 2rem;
+  gap: var(--gap-medium);
   height: 100vh;
 }
 
@@ -244,7 +259,7 @@ main {
 .about__card {
   background-color: var(--bg-color);
   width: calc(100% - 4rem);
-  border-radius: 0.7rem;
+  border-radius: var(--b-rad-med);
 }
 
 .btns {
@@ -252,7 +267,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--gap-small);
 }
 
 .rules,
@@ -271,12 +286,28 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: var(--gap-medium);
 }
 .about__link, .about__link:visited {
   display: inline;
   text-decoration: underline;
   color: blue;
+}
+
+.board {
+  grid-area: board;
+}
+
+.btns {
+  grid-area: buttons;
+}
+
+.rules {
+  grid-area: rules;
+}
+
+.notes {
+  grid-area: notes;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,11 +1,25 @@
 :root {
+  // Colors
   --bg-color: #aadeff;
+  --bg-color-dark: #8acbf4;
+  --color-grey-light: #fdfdfd;
 
+  --color-text: #000;
+
+  // Font-size
   --fs-reg: 1.3rem;
   --fs-large: 1.5rem;
   --fs-xl: 2rem;
-}
 
-$border-radius-xsm: 0.3rem;
-$border-radius-sm: 0.5rem;
-$border-radius-md: 0.7rem;
+  // Border radius
+  --b-rad-xsm: 0.3rem;
+  --b-rad-sm: 0.5rem;
+  --b-rad-med: 0.7rem;
+
+  // Border
+  --border-black-thick: 3px solid #000;
+
+  // Gaps
+  --gap-small: 1rem;
+  --gap-medium: 2rem;
+}
