@@ -229,17 +229,34 @@ input[type=number] {
   }
 }
 .nav__icon {
-  height: 3.5rem;
-  width: 3.5rem;
+  --dimension: 2rem;
+  height: var(--dimension);
+  width: var(--dimension);
   margin-bottom: 0.4rem;
+}
+@media (min-width: 25em) {
+  .nav__icon {
+    --dimension: 2.5rem;
+  }
+}
+@media (min-width: 56.25em) {
+  .nav__icon {
+    --dimension: 3.5rem;
+  }
 }
 .nav__toggle {
   order: 1;
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 35px;
-  height: 25px;
+  height: 18px;
+  width: 23px;
+}
+@media (min-width: 25em) {
+  .nav__toggle {
+    height: 25px;
+    width: 30px;
+  }
 }
 @media (max-width: 37.49875em) {
   .nav__toggle {

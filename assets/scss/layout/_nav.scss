@@ -48,9 +48,18 @@
   }
 
   &__icon {
-    height: 3.5rem;
-    width: 3.5rem;
+    --dimension: 2rem;
+    height: var(--dimension);
+    width: var(--dimension);
     margin-bottom: 0.4rem;
+
+    @include breakpoint(small) {
+      --dimension: 2.5rem;
+    }
+
+    @include breakpoint(large) {
+      --dimension: 3.5rem;
+    }
   }
 
   &__toggle {
@@ -58,8 +67,14 @@
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 35px;
-    height: 25px;
+
+    height: 18px;
+    width: 23px;
+
+    @include breakpoint(small) {
+      height: 25px;
+      width: 30px;
+    }
 
     @include breakpoint-down(medium) {
       display: flex;
