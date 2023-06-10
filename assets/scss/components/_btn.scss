@@ -8,6 +8,10 @@
   color: var(--color-text);
   transition: transform 0.2s;
 
+  & > *:not(:last-child) {
+    margin-bottom: 0.2rem;
+  }
+
   &:active {
     transform: translateY(2px);
   }
@@ -19,7 +23,8 @@
   }
 
   &__text {
-    font-size: var(--fs-reg);
+    font-size: var(--fs-small);
+    text-transform: uppercase;
   }
 
   &--solve,
@@ -34,6 +39,7 @@
     height: 4rem;
     order: -1;
 
-    font-size: var(--fs-xl);
+    font-size: var(--fs-large);
+    text-transform: uppercase;
   }
 }

@@ -9,6 +9,7 @@
   --color-text: #000;
 
   // Font-size
+  --fs-small: 0.8rem;
   --fs-reg: 1rem;
   --fs-large: 1.3rem;
   --fs-xl: 1.5rem;
@@ -26,18 +27,21 @@
   --gap-medium: 2rem;
 
   @include breakpoint(small) {
+    --fs-small: 0.9rem;
     --fs-reg: 1.3rem;
     --fs-large: 1.6rem;
     --fs-xl: 1.9rem;
   }
 
   @include breakpoint(medium) {
+    --fs-small: 1rem;
     --fs-reg: 1.3rem;
     --fs-large: 1.8rem;
     --fs-xl: 2rem;
   }
 
   @include breakpoint(large) {
+    --fs-small: 1.3rem;
     --fs-reg: 1.8rem;
     --fs-large: 2.2rem;
     --fs-xl: 2.5rem;

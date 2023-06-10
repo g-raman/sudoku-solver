@@ -59,6 +59,7 @@ input {
   --bg-color-dark: #8acbf4;
   --color-grey-light: #fdfdfd;
   --color-text: #000;
+  --fs-small: 0.8rem;
   --fs-reg: 1rem;
   --fs-large: 1.3rem;
   --fs-xl: 1.5rem;
@@ -71,6 +72,7 @@ input {
 }
 @media (min-width: 25em) {
   :root {
+    --fs-small: 0.9rem;
     --fs-reg: 1.3rem;
     --fs-large: 1.6rem;
     --fs-xl: 1.9rem;
@@ -78,6 +80,7 @@ input {
 }
 @media (min-width: 37.5em) {
   :root {
+    --fs-small: 1rem;
     --fs-reg: 1.3rem;
     --fs-large: 1.8rem;
     --fs-xl: 2rem;
@@ -85,6 +88,7 @@ input {
 }
 @media (min-width: 56.25em) {
   :root {
+    --fs-small: 1.3rem;
     --fs-reg: 1.8rem;
     --fs-large: 2.2rem;
     --fs-xl: 2.5rem;
@@ -111,7 +115,7 @@ input {
   height: 100%;
   width: 100%;
   text-align: center;
-  font-size: var(--font-reg);
+  font-size: var(--fs-reg);
   font-weight: 400;
 }
 .board > input:nth-child(3n) {
@@ -166,6 +170,9 @@ input[type=number] {
   color: var(--color-text);
   transition: transform 0.2s;
 }
+.btn > *:not(:last-child) {
+  margin-bottom: 0.2rem;
+}
 .btn:active {
   transform: translateY(2px);
 }
@@ -175,7 +182,8 @@ input[type=number] {
   fill: currentColor;
 }
 .btn__text {
-  font-size: var(--fs-reg);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
 }
 .btn--solve, .btn--check, .btn--new, .btn--clear {
   flex: 1;
@@ -184,7 +192,8 @@ input[type=number] {
   width: 100%;
   height: 4rem;
   order: -1;
-  font-size: var(--fs-xl);
+  font-size: var(--fs-large);
+  text-transform: uppercase;
 }
 
 .nav {
