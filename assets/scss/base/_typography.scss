@@ -17,15 +17,18 @@ a:visited {
 }
 
 h1 {
-  font-size: var(--fs-xl);
+  font-size: var(--fs-h1);
 }
 
 h2 {
-  font-size: var(--fs-large);
+  font-size: var(--fs-h2);
 }
 
 p,
 input {
-  font-size: var(--fs-reg);
+  font-size: var(--fs-text);
 }
 
+li {
+  font-size: var(--fs-nav);
+}

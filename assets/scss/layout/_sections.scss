@@ -1,21 +1,25 @@
 @use "../abstracts/" as a;
+@use "../base/" as *;
 
 .board,
 .btns,
-.rules,
-.notes,
+.explanation,
 .about__card {
   background-color: var(--bg-color);
-  width: calc(100% - 4rem);
   border-radius: var(--b-rad-med);
 }
 
 .btns {
+  justify-self: stretch;
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--gap-small);
+
+  @include breakpoint(large) {
+    align-self: stretch;
+  }
 }
 
 .rules,
@@ -23,11 +27,18 @@
 .about__card {
   line-height: 1.2;
   padding: 1.5rem;
+  border-radius: var(--b-rad-med);
 
   & > *:not(:last-child) {
     margin-bottom: 1rem;
   }
 }
+
+.rules,
+.notes {
+  background: var(--bg-color);
+}
+
 
 .about {
   display: flex;
@@ -51,10 +62,19 @@
   grid-area: buttons;
 }
 
-.rules {
-  grid-area: rules;
+.explanation {
+  grid-area: explanation;
+  background: none;
+
+  display: grid;
+  gap: var(--gap-medium);
+  align-items: stretch;
+
+  @include breakpoint(large) {
+    justify-self: start;
+  }
 }
 
-.notes {
-  grid-area: notes;
+.about {
+  margin-top: 2rem;
 }

@@ -42,16 +42,20 @@ a:visited {
 }
 
 h1 {
-  font-size: var(--fs-xl);
+  font-size: var(--fs-h1);
 }
 
 h2 {
-  font-size: var(--fs-large);
+  font-size: var(--fs-h2);
 }
 
 p,
 input {
-  font-size: var(--fs-reg);
+  font-size: var(--fs-text);
+}
+
+li {
+  font-size: var(--fs-nav);
 }
 
 :root {
@@ -59,10 +63,15 @@ input {
   --bg-color-dark: #8acbf4;
   --color-grey-light: #fdfdfd;
   --color-text: #000;
-  --fs-small: 0.8rem;
-  --fs-reg: 1rem;
-  --fs-large: 1.3rem;
-  --fs-xl: 1.5rem;
+  --fs-base: 1rem;
+  --fs-nav: calc(var(--fs-base) * 1.1);
+  --fs-h1: calc(var(--fs-base) * 1.3);
+  --fs-h2: calc(var(--fs-base) * 1.2);
+  --fs-text: calc(var(--fs-base) * 1);
+  --fs-nav: 1.1rem;
+  --fs-h1: 1.3rem;
+  --fs-h2: 1.2rem;
+  --fs-text: 1rem;
   --b-rad-xsm: 0.3rem;
   --b-rad-sm: 0.5rem;
   --b-rad-med: 0.7rem;
@@ -72,26 +81,39 @@ input {
 }
 @media (min-width: 25em) {
   :root {
-    --fs-small: 0.9rem;
-    --fs-reg: 1.3rem;
-    --fs-large: 1.6rem;
-    --fs-xl: 1.9rem;
+    --fs-nav: calc(var(--fs-base) * 1.4);
+    --fs-h1: calc(var(--fs-base) * 1.8);
+    --fs-h2: calc(var(--fs-base) * 1.5);
+    --fs-text: calc(var(--fs-base) * 1.2);
   }
 }
 @media (min-width: 37.5em) {
   :root {
-    --fs-small: 1rem;
-    --fs-reg: 1.3rem;
-    --fs-large: 1.8rem;
-    --fs-xl: 2rem;
+    --fs-nav: calc(var(--fs-base) * 1.3);
+    --fs-h1: calc(var(--fs-base) * 2);
+    --fs-h2: calc(var(--fs-base) * 1.7);
+    --fs-text: calc(var(--fs-base) * 1.2);
   }
 }
 @media (min-width: 56.25em) {
   :root {
-    --fs-small: 1.3rem;
-    --fs-reg: 1.8rem;
-    --fs-large: 2.2rem;
-    --fs-xl: 2.5rem;
+    --fs-nav: calc(var(--fs-base) * 1.5);
+    --fs-h1: calc(var(--fs-base) * 2.3);
+    --fs-h2: calc(var(--fs-base) * 1.7);
+    --fs-text: calc(var(--fs-base) * 1.1);
+  }
+}
+@media (min-width: 65.625em) {
+  :root {
+    --fs-text: 1.3rem;
+  }
+}
+@media (min-width: 90em) {
+  :root {
+    --fs-nav: calc(var(--fs-base) * 1.7);
+    --fs-h1: calc(var(--fs-base) * 2.6);
+    --fs-h2: calc(var(--fs-base) * 1.9);
+    --fs-text: calc(var(--fs-base) * 1.7);
   }
 }
 
@@ -223,7 +245,6 @@ input[type=number] {
 .nav__links li {
   padding: 1rem;
   border-radius: var(--b-rad-xsm);
-  font-size: var(--fs-reg);
   flex-grow: 1;
   width: 100%;
   text-align: center;
@@ -290,32 +311,43 @@ input[type=number] {
   display: flex;
 }
 
-main {
+.main {
   display: grid;
-  grid-template-areas: "nav" "board" "buttons" "rules" "notes";
+  grid-template-areas: "nav nav nav" ". board ." ". buttons ." ". explanation .";
   grid-template-rows: repeat(5, min-content);
-  justify-items: center;
-  align-content: start;
+  grid-template-columns: 0.5fr 20fr 0.5fr;
+  justify-content: center;
+  align-content: center;
   gap: var(--gap-medium);
-  height: 100vh;
+}
+@media (min-width: 56.25em) {
+  .main {
+    grid-template-areas: "nav nav nav nav nav" ". board board explanation ." ". board board explanation ." ". buttons buttons explanation .";
+    grid-template-rows: repeat(4, min-content);
+    grid-template-columns: 1fr repeat(3, 5fr) 1fr;
+  }
 }
 
 .board,
 .btns,
-.rules,
-.notes,
+.explanation,
 .about__card {
   background-color: var(--bg-color);
-  width: calc(100% - 4rem);
   border-radius: var(--b-rad-med);
 }
 
 .btns {
+  justify-self: stretch;
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--gap-small);
+}
+@media (min-width: 56.25em) {
+  .btns {
+    align-self: stretch;
+  }
 }
 
 .rules,
@@ -323,11 +355,17 @@ main {
 .about__card {
   line-height: 1.2;
   padding: 1.5rem;
+  border-radius: var(--b-rad-med);
 }
 .rules > *:not(:last-child),
 .notes > *:not(:last-child),
 .about__card > *:not(:last-child) {
   margin-bottom: 1rem;
+}
+
+.rules,
+.notes {
+  background: var(--bg-color);
 }
 
 .about {
@@ -350,12 +388,21 @@ main {
   grid-area: buttons;
 }
 
-.rules {
-  grid-area: rules;
+.explanation {
+  grid-area: explanation;
+  background: none;
+  display: grid;
+  gap: var(--gap-medium);
+  align-items: stretch;
+}
+@media (min-width: 56.25em) {
+  .explanation {
+    justify-self: start;
+  }
 }
 
-.notes {
-  grid-area: notes;
+.about {
+  margin-top: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

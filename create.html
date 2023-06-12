@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <main>
+  <main class="main">
     <nav class="nav">
       <div class="nav__title">
         <svg class="nav__icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
@@ -156,35 +156,37 @@
       </button>
     </section>
 
-    <section class="rules">
-      <h2>Rules</h2>
-      <p class="paragraph">
-        The goal of the game is to fill in the board such that each row,
-        column, and 3x3 sub-grid has the numbers 1-9 with no duplicates.
-      </p>
+    <section class="explanation">
+      <div class="rules">
+        <h2>Rules</h2>
+        <p class="paragraph">
+          The goal of the game is to fill in the board such that each row,
+          column, and 3x3 sub-grid has the numbers 1-9 with no duplicates.
+        </p>
 
-      <p class="paragraph">
-        Here is an <span class="example">example</span> of a typical sudoku
-        board.
-      </p>
-    </section>
+        <p class="paragraph">
+          Here is an <span class="example">example</span> of a typical sudoku
+          board.
+        </p>
+      </div>
 
-    <section class="notes">
-      <h2>Notes</h2>
+      <div class="notes">
+        <h2>Notes</h2>
 
-      <p class="paragraph">
-        Enter numbers into board and press solve to a see a solution for that
-        board.
-      </p>
+        <p class="paragraph">
+          Enter numbers into board and press solve to a see a solution for
+          that board.
+        </p>
 
-      <p class="paragraph">
-        The solver will tell you if the board is invalid or unsolvable.
-        Otherwise, you'll be shown the solution. Click these to see an example
-        of a <span class="invalid">invalid</span> and
-        <span class="unsolvable">unsolvable</span> baord.
-      </p>
+        <p class="paragraph">
+          The solver will tell you if the board is invalid or unsolvable.
+          Otherwise, you'll be shown the solution. Click these to see an
+          example of a <span class="invalid">invalid</span> and
+          <span class="unsolvable">unsolvable</span> baord.
+        </p>
 
-      <p class="paragraph">There may be multiple solutions to a board.</p>
+        <p class="paragraph">There may be multiple solutions to a board.</p>
+      </div>
     </section>
   </main>
 </body>
