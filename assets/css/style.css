@@ -184,6 +184,13 @@ li {
   grid-area: card3;
 }
 
+.example,
+.invalid,
+.unsolvable {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .nav {
   grid-area: nav;
   justify-self: stretch;

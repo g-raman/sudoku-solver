@@ -24,6 +24,58 @@ function showValidInputOnly() {
 // Selectors
 const solveBtn = document.querySelector(".btn--solve");
 const clearBtn = document.querySelector(".btn--clear");
+const typicalExample = document.querySelector(".example");
+const invalidExample = document.querySelector(".invalid");
+const unsolvableExample = document.querySelector(".unsolvable");
+
+// Examples
+const exampleBoard = [
+  ["5", "3", "", "", "7", "", "", "", ""],
+  ["6", "", "", "1", "9", "5", "", "", ""],
+  ["", "9", "8", "", "", "", "", "6", ""],
+  ["8", "", "", "", "6", "", "", "", "3"],
+  ["4", "", "", "8", "", "3", "", "", "1"],
+  ["7", "", "", "", "2", "", "", "", "6"],
+  ["", "6", "", "", "", "", "2", "8", ""],
+  ["", "", "", "4", "1", "9", "", "", "5"],
+  ["", "", "", "", "8", "", "", "7", "9"],
+];
+
+const invalidBoard = [
+  ["1", "1", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+];
+
+const unsolvableBoard = [
+  ["1", "2", "3", "4", "5", "6", "7", "", "9"],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "8", ""],
+];
+
+typicalExample.addEventListener("click", function() {
+  updateBoard(exampleBoard);
+});
+
+invalidExample.addEventListener("click", function() {
+  updateBoard(invalidBoard);
+});
+
+unsolvableExample.addEventListener("click", function() {
+  updateBoard(unsolvableBoard);
+});
 
 // Main
 document.addEventListener("DOMContentLoaded", function() {
