@@ -68,6 +68,7 @@ li {
   --fs-h1: calc(var(--fs-base) * 1.3);
   --fs-h2: calc(var(--fs-base) * 1.2);
   --fs-text: calc(var(--fs-base) * 1);
+  --fs-cell: calc(var(--fs-base) * 1);
   --b-rad-xsm: 0.3rem;
   --b-rad-sm: 0.5rem;
   --b-rad-med: 0.7rem;
@@ -81,6 +82,7 @@ li {
     --fs-h1: calc(var(--fs-base) * 1.8);
     --fs-h2: calc(var(--fs-base) * 1.5);
     --fs-text: calc(var(--fs-base) * 1.2);
+    --fs-cell: calc(var(--fs-base) * 1.2);
   }
 }
 @media (min-width: 37.5em) {
@@ -89,6 +91,7 @@ li {
     --fs-h1: calc(var(--fs-base) * 2);
     --fs-h2: calc(var(--fs-base) * 1.7);
     --fs-text: calc(var(--fs-base) * 1.2);
+    --fs-cell: calc(var(--fs-base) * 1.5);
   }
 }
 @media (min-width: 56.25em) {
@@ -97,6 +100,7 @@ li {
     --fs-h1: calc(var(--fs-base) * 2.3);
     --fs-h2: calc(var(--fs-base) * 1.7);
     --fs-text: calc(var(--fs-base) * 1.1);
+    --fs-cell: calc(var(--fs-base) * 1.6);
   }
 }
 @media (min-width: 65.625em) {
@@ -110,6 +114,7 @@ li {
     --fs-h1: calc(var(--fs-base) * 2.6);
     --fs-h2: calc(var(--fs-base) * 1.9);
     --fs-text: calc(var(--fs-base) * 1.7);
+    --fs-cell: calc(var(--fs-base) * 2);
   }
 }
 
@@ -133,7 +138,7 @@ li {
   height: 100%;
   width: 100%;
   text-align: center;
-  font-size: var(--fs-reg);
+  font-size: var(--fs-cell);
   font-weight: 400;
 }
 .board > input:nth-child(3n) {
