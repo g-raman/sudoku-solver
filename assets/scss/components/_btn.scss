@@ -19,7 +19,7 @@
   }
 
   &__text {
-    font-size: var(--fs-small);
+    font-size: var(--fs-btn);
     text-transform: uppercase;
   }
 
@@ -35,7 +35,7 @@
     height: 4rem;
     order: -1;
 
-    font-size: var(--fs-large);
+    font-size: var(--fs-timer);
     text-transform: uppercase;
     background: var(--color-grey-light);
   }
@@ -48,4 +48,3 @@
     transform: translateY(2px);
   }
 }
-

@@ -16,6 +16,8 @@
   --fs-h2: calc(var(--fs-base) * 1.2);
   --fs-text: calc(var(--fs-base) * 1);
   --fs-cell: calc(var(--fs-base) * 1);
+  --fs-timer: calc(var(--fs-base) * 1.5);
+  --fs-btn: calc(var(--fs-base) * 0.7);
 
   // Border radius
   --b-rad-xsm: 0.3rem;
@@ -43,6 +45,8 @@
     --fs-h2: calc(var(--fs-base) * 1.7);
     --fs-text: calc(var(--fs-base) * 1.2);
     --fs-cell: calc(var(--fs-base) * 1.5);
+    --fs-timer: calc(var(--fs-base) * 2);
+    --fs-btn: calc(var(--fs-base) * 1);
   }
 
   @include breakpoint(large) {
@@ -51,6 +55,8 @@
     --fs-h2: calc(var(--fs-base) * 1.7);
     --fs-text: calc(var(--fs-base) * 1.1);
     --fs-cell: calc(var(--fs-base) * 1.6);
+    --fs-timer: calc(var(--fs-base) * 2.2);
+    --fs-btn: calc(var(--fs-base) * 1.2);
   }
 
   @include breakpoint(xlarge) {
@@ -63,5 +69,7 @@
     --fs-h2: calc(var(--fs-base) * 1.9);
     --fs-text: calc(var(--fs-base) * 1.7);
     --fs-cell: calc(var(--fs-base) * 2);
+    --fs-timer: calc(var(--fs-base) * 2.5);
+    --fs-btn: calc(var(--fs-base) * 1.5);
   }
 }
