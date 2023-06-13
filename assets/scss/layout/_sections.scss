@@ -9,18 +9,6 @@
   border-radius: var(--b-rad-med);
 }
 
-.btns {
-  justify-self: stretch;
-  padding: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--gap-small);
-
-  @include breakpoint(large) {
-    align-self: stretch;
-  }
-}
 
 .rules,
 .notes,
@@ -73,10 +61,6 @@
     }
 
   }
-}
-
-.btns {
-  grid-area: buttons;
 }
 
 .explanation {

@@ -357,20 +357,6 @@ input[type=number] {
   border-radius: var(--b-rad-med);
 }
 
-.btns {
-  justify-self: stretch;
-  padding: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--gap-small);
-}
-@media (min-width: 56.25em) {
-  .btns {
-    align-self: stretch;
-  }
-}
-
 .rules,
 .notes,
 .about__card {
@@ -412,10 +398,6 @@ input[type=number] {
   grid-area: card3;
 }
 
-.btns {
-  grid-area: buttons;
-}
-
 .explanation {
   grid-area: explanation;
   background: none;
@@ -437,6 +419,21 @@ input[type=number] {
 }
 .footer a {
   color: blue;
+}
+
+.btns {
+  grid-area: buttons;
+  justify-self: stretch;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--gap-small);
+}
+@media (min-width: 56.25em) {
+  .btns {
+    align-self: stretch;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

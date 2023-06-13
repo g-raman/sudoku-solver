@@ -1,0 +1,17 @@
+@use "../base/" as *;
+
+.btns {
+  grid-area: buttons;
+  justify-self: stretch;
+
+  padding: 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--gap-small);
+
+  @include breakpoint(large) {
+    align-self: stretch;
+  }
+}
