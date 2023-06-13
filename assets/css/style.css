@@ -87,6 +87,10 @@ li {
   transform: translateY(2px) !important;
 }
 
+.active {
+  display: flex !important;
+}
+
 :root {
   --bg-color: #aadeff;
   --bg-color-dark: #8acbf4;
@@ -327,10 +331,6 @@ input[type=number] {
     flex-basis: 100%;
     height: 0;
   }
-}
-
-.active {
-  display: flex;
 }
 
 .main {
