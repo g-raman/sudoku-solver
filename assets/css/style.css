@@ -188,15 +188,12 @@ input[type=number] {
   padding: 0.5rem;
   border: none;
   border-radius: var(--b-rad-xsm);
-  background-color: var(--color-grey-light);
+  background: #cecdcd;
   color: var(--color-text);
   transition: transform 0.2s;
 }
 .btn > *:not(:last-child) {
   margin-bottom: 0.2rem;
-}
-.btn:active {
-  transform: translateY(2px);
 }
 .btn__logo {
   width: 2rem;
@@ -216,6 +213,14 @@ input[type=number] {
   order: -1;
   font-size: var(--fs-large);
   text-transform: uppercase;
+  background: var(--color-grey-light);
+}
+
+.enabled {
+  background: var(--color-grey-light);
+}
+.enabled:active {
+  transform: translateY(2px);
 }
 
 .nav {

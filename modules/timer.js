@@ -30,7 +30,7 @@ function timer() {
 timerElem.addEventListener("click", () => {
   showNewSudoku();
   startTimer();
-  timerElem.disabled = true;
+  disableBtn(timerElem);
 });
 
 function startTimer() {

@@ -112,5 +112,10 @@ const showNewSudoku = async () => {
   }
 
   startTimer();
+  
+  enableBtn(solveBtn);
+  enableBtn(checkBtn);
+  enableBtn(newBtn);
+  enableBtn(clearBtn);
 };
 

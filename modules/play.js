@@ -19,6 +19,16 @@ function showValidInputOnly() {
   }
 }
 
+function disableBtn(btn) {
+  btn.disabled = true;
+  btn.classList.remove("enabled");
+}
+
+function enableBtn(btn) {
+  btn.disabled = false;
+  btn.classList.add("enabled");
+}
+
 // Selectors
 const solveBtn = document.querySelector(".btn--solve");
 const checkBtn = document.querySelector(".btn--check");
@@ -30,7 +40,11 @@ document.addEventListener("DOMContentLoaded", function() {
   resetBoard();
   showValidInputOnly();
 
+  [solveBtn, checkBtn, newBtn, clearBtn].forEach(disableBtn);
+
   solveBtn.addEventListener("click", function() {
+    [checkBtn, clearBtn].forEach(disableBtn);
+
     clearBoard();
     const board = boardToArray();
     solve(board);
@@ -47,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
     } else if (isValidSudoku(board)) {
       alert("Congratulations! You finished the puzzle!");
       stopTimer();
+      disableBtn(solveBtn);
     } else alert("You have some errors. Keep trying!");
   });
 
