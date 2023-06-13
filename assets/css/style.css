@@ -332,16 +332,6 @@ li {
   }
 }
 
-.footer {
-  grid-area: footer;
-  padding: 2rem 1rem;
-  text-align: center;
-  font-size: var(--fs-text);
-}
-.footer a {
-  color: blue;
-}
-
 .btns {
   grid-area: buttons;
   justify-self: stretch;
@@ -355,6 +345,16 @@ li {
   .btns {
     align-self: stretch;
   }
+}
+
+.footer {
+  grid-area: footer;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: var(--fs-text);
+}
+.footer a {
+  color: blue;
 }
 
 .board {

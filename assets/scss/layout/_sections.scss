@@ -40,14 +40,3 @@
   }
 }
 
-.footer {
-  grid-area: footer;
-  padding: 2rem 1rem;
-  text-align: center;
-  font-size: var(--fs-text);
-
-  & a {
-    color: blue;
-  }
-}
-
