@@ -6,7 +6,8 @@
     "nav nav nav"
     ". board ."
     ". buttons ."
-    ". explanation .";
+    ". explanation ."
+    ". footer .";
   grid-template-rows: repeat(5, min-content);
   grid-template-columns: 0.5fr 20fr 0.5fr;
 
@@ -20,7 +21,8 @@
       "nav nav nav nav nav"
       ". board board explanation ."
       ". board board explanation ."
-      ". buttons buttons explanation .";
+      ". buttons buttons explanation ."
+      "footer footer footer footer footer";
 
     grid-template-rows: repeat(4, min-content);
     grid-template-columns: 1fr repeat(3, 5fr) 1fr;
