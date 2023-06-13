@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
     } else if (isValidSudoku(board)) {
       alert("Congratulations! You finished the puzzle!");
       stopTimer();
-      disableBtn(solveBtn);
+      [solveBtn, clearBtn].forEach(disableBtn);
     } else alert("You have some errors. Keep trying!");
   });
 
