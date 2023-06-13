@@ -167,6 +167,7 @@ li {
   display: grid;
   grid-template-rows: repeat(9, 1fr);
   grid-template-columns: repeat(9, 1fr);
+  grid-area: board;
 }
 .board__cell {
   height: 100%;
@@ -409,10 +410,6 @@ input[type=number] {
 }
 .about__card--3 {
   grid-area: card3;
-}
-
-.board {
-  grid-area: board;
 }
 
 .btns {
