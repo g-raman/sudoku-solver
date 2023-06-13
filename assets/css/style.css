@@ -61,8 +61,10 @@ li {
 :root {
   --bg-color: #aadeff;
   --bg-color-dark: #8acbf4;
-  --color-grey-light: #fdfdfd;
+  --bg-color-disabled: #e6e6e6;
   --color-text: #000;
+  --color-text-disabled: #7b7575;
+  --color-grey-light: #fdfdfd;
   --fs-base: 1rem;
   --fs-nav: calc(var(--fs-base) * 1.1);
   --fs-h1: calc(var(--fs-base) * 1.3);
@@ -197,9 +199,9 @@ input[type=number] {
   padding: 0.5rem;
   border: none;
   border-radius: var(--b-rad-xsm);
-  background: #cecdcd;
-  color: var(--color-text);
-  transition: transform 0.2s;
+  background: var(--bg-color-disabled);
+  color: var(--color-text-disabled);
+  transition: all 0.3s;
 }
 .btn > *:not(:last-child) {
   margin-bottom: 0.2rem;
@@ -212,6 +214,7 @@ input[type=number] {
 .btn__text {
   font-size: var(--fs-btn);
   text-transform: uppercase;
+  color: currentColor;
 }
 .btn--solve, .btn--check, .btn--new, .btn--clear {
   flex: 1;
@@ -223,10 +226,12 @@ input[type=number] {
   font-size: var(--fs-timer);
   text-transform: uppercase;
   background: var(--color-grey-light);
+  color: var(--color-text);
 }
 
 .enabled {
   background: var(--color-grey-light);
+  color: var(--color-text);
 }
 .enabled:active {
   transform: translateY(2px);

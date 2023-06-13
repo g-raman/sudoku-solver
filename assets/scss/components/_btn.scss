@@ -4,9 +4,9 @@
   padding: 0.5rem;
   border: none;
   border-radius: var(--b-rad-xsm);
-  background: #cecdcd;
-  color: var(--color-text);
-  transition: transform 0.2s;
+  background: var(--bg-color-disabled);
+  color: var(--color-text-disabled);
+  transition: all 0.3s;
 
   & > *:not(:last-child) {
     margin-bottom: 0.2rem;
@@ -21,6 +21,7 @@
   &__text {
     font-size: var(--fs-btn);
     text-transform: uppercase;
+    color: currentColor;
   }
 
   &--solve,
@@ -38,11 +39,13 @@
     font-size: var(--fs-timer);
     text-transform: uppercase;
     background: var(--color-grey-light);
+    color: var(--color-text);
   }
 }
 
 .enabled {
   background: var(--color-grey-light);
+  color: var(--color-text);
 
   &:active {
     transform: translateY(2px);
