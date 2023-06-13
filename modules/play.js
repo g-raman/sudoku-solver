@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
   [solveBtn, checkBtn, newBtn, clearBtn].forEach(disableBtn);
 
   solveBtn.addEventListener("click", function() {
-    [checkBtn, clearBtn].forEach(disableBtn);
+    [solveBtn, checkBtn, clearBtn].forEach(disableBtn);
 
     clearBoard();
     const board = boardToArray();
