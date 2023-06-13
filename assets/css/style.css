@@ -295,7 +295,8 @@ li {
 
 .board,
 .btns,
-.explanation,
+.rules,
+.notes,
 .about__card {
   background-color: var(--bg-color);
   border-radius: var(--b-rad-med);
@@ -306,7 +307,6 @@ li {
 .about__card {
   line-height: 1.2;
   padding: 1.5rem;
-  border-radius: var(--b-rad-med);
 }
 .rules > *:not(:last-child),
 .notes > *:not(:last-child),
@@ -314,22 +314,11 @@ li {
   margin-bottom: 1rem;
 }
 
-.rules,
-.notes {
-  background: var(--bg-color);
-}
-
 .explanation {
   grid-area: explanation;
-  background: none;
   display: grid;
   gap: var(--gap-medium);
   align-items: stretch;
-}
-@media (min-width: 56.25em) {
-  .explanation {
-    justify-self: start;
-  }
 }
 
 .btns {
