@@ -2,10 +2,11 @@
 
 .btn {
   padding: 0.5rem;
-  border: none;
-  border-radius: var(--b-rad-xsm);
   background: var(--bg-color-disabled);
   color: var(--color-text-disabled);
+
+  border: none;
+  border-radius: var(--b-rad-xsm);
   transition: all 0.3s;
 
   & > *:not(:last-child) {
@@ -36,18 +37,10 @@
     height: 4rem;
     order: -1;
 
-    font-size: var(--fs-timer);
-    text-transform: uppercase;
     background: var(--color-grey-light);
     color: var(--color-text);
+    font-size: var(--fs-timer);
+    text-transform: uppercase;
   }
 }
 
-.enabled {
-  background: var(--color-grey-light);
-  color: var(--color-text);
-
-  &:active {
-    transform: translateY(2px);
-  }
-}

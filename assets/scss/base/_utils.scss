@@ -1,16 +1,25 @@
 .bb {
-  border-bottom: var(--border-black-thick);
+  border-bottom: var(--border-black-thick) !important;
 }
 
 .bt {
-  border-top: var(--border-black-thick);
+  border-top: var(--border-black-thick) !important;
 }
 
 .bl {
-  border-left: var(--border-black-thick);
+  border-left: var(--border-black-thick) !important;
 }
 
 .hint {
-  background-color: #ddd;
-  opacity: 1;
+  background-color: #ddd !important;
+  opacity: 1 !important;
+}
+
+.enabled {
+  background: var(--color-grey-light) !important;
+  color: var(--color-text) !important;
+
+  &:active {
+    transform: translateY(2px) !important;
+  }
 }

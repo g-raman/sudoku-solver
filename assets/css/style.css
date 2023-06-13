@@ -63,20 +63,28 @@ li {
 }
 
 .bb {
-  border-bottom: var(--border-black-thick);
+  border-bottom: var(--border-black-thick) !important;
 }
 
 .bt {
-  border-top: var(--border-black-thick);
+  border-top: var(--border-black-thick) !important;
 }
 
 .bl {
-  border-left: var(--border-black-thick);
+  border-left: var(--border-black-thick) !important;
 }
 
 .hint {
-  background-color: #ddd;
-  opacity: 1;
+  background-color: #ddd !important;
+  opacity: 1 !important;
+}
+
+.enabled {
+  background: var(--color-grey-light) !important;
+  color: var(--color-text) !important;
+}
+.enabled:active {
+  transform: translateY(2px) !important;
 }
 
 :root {
@@ -195,10 +203,10 @@ input[type=number] {
 
 .btn {
   padding: 0.5rem;
-  border: none;
-  border-radius: var(--b-rad-xsm);
   background: var(--bg-color-disabled);
   color: var(--color-text-disabled);
+  border: none;
+  border-radius: var(--b-rad-xsm);
   transition: all 0.3s;
 }
 .btn > *:not(:last-child) {
@@ -221,18 +229,10 @@ input[type=number] {
   width: 100%;
   height: 4rem;
   order: -1;
+  background: var(--color-grey-light);
+  color: var(--color-text);
   font-size: var(--fs-timer);
   text-transform: uppercase;
-  background: var(--color-grey-light);
-  color: var(--color-text);
-}
-
-.enabled {
-  background: var(--color-grey-light);
-  color: var(--color-text);
-}
-.enabled:active {
-  transform: translateY(2px);
 }
 
 .nav {
