@@ -23,6 +23,10 @@ a:visited {
   text-decoration: none;
 }
 
+input {
+  border: 1px solid #aaa;
+}
+
 * {
   font-family: inherit;
 }
@@ -56,6 +60,23 @@ input {
 
 li {
   font-size: var(--fs-nav);
+}
+
+.bb {
+  border-bottom: var(--border-black-thick);
+}
+
+.bt {
+  border-top: var(--border-black-thick);
+}
+
+.bl {
+  border-left: var(--border-black-thick);
+}
+
+.hint {
+  background-color: #ddd;
+  opacity: 1;
 }
 
 :root {
@@ -141,7 +162,6 @@ li {
   background-color: var(--color-grey-light);
   color: var(--color-text);
   border-radius: 0;
-  border: 1px solid #aaa;
   text-align: center;
   font-size: var(--fs-cell);
   font-weight: 400;
@@ -160,23 +180,6 @@ li {
 }
 .board > input:nth-child(81) {
   border-bottom-right-radius: var(--b-rad-sm);
-}
-
-.bb {
-  border-bottom: var(--border-black-thick);
-}
-
-.bt {
-  border-top: var(--border-black-thick);
-}
-
-.bl {
-  border-left: var(--border-black-thick);
-}
-
-.hint {
-  background-color: #ddd;
-  opacity: 1;
 }
 
 input[type=number]::-webkit-inner-spin-button,
