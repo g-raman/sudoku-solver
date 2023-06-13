@@ -27,42 +27,6 @@
   background: var(--bg-color);
 }
 
-
-.about {
-  display: grid;
-  grid-template-columns: 1fr 20fr 1fr;
-  grid-template-areas: 
-    ". card1 ."
-    ". card2 ."
-    ". card3 .";
-
-  justify-content: center;
-  margin-top: 2rem;
-  gap: var(--gap-medium);
-
-  &__link,
-  &__link:visited {
-    display: inline;
-    text-decoration: underline;
-    color: blue;
-  }
-
-  &__card {
-    &--1 {
-      grid-area: card1;
-    }
-
-    &--2 {
-      grid-area: card2;
-    }
-
-    &--3 {
-      grid-area: card3;
-    }
-
-  }
-}
-
 .explanation {
   grid-area: explanation;
   background: none;
