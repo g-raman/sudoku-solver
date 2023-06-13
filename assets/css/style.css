@@ -249,7 +249,7 @@ input[type=number] {
 .nav__title {
   display: flex;
   align-items: center;
-  flex-grow: 1;
+  margin-right: auto;
 }
 .nav__links ul {
   display: flex;
@@ -262,11 +262,16 @@ input[type=number] {
   }
 }
 .nav__links li {
-  padding: 1rem;
   border-radius: var(--b-rad-xsm);
   flex-grow: 1;
   width: 100%;
   text-align: center;
+}
+.nav__links li a {
+  padding: 1rem;
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 .nav__links li:hover {
   background-color: var(--bg-color-dark);
