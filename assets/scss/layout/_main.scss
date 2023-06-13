@@ -10,10 +10,6 @@
     ". footer .";
   grid-template-rows: repeat(5, min-content);
   grid-template-columns: 0.5fr 20fr 0.5fr;
-
-  // justify-items: center;
-  justify-content: center;
-  align-content: center;
   gap: var(--gap-medium);
 
   @include breakpoint(large) {
